@@ -6,15 +6,13 @@ import Note from "./components/Note/Note";
 import Footer from "./components/footer/Footer";
 import notes from "./notes";
 
-function createNote(card) {
-  return <Note key={card.id} title={card.title} content={card.content} />;
-}
-
 function App() {
   return (
     <>
       <Header />
-      {notes.map(createNote)}
+      {notes.map((card) => {
+        return <Note key={card.id} title={card.title} content={card.content} />;
+      })}
       <Footer />
     </>
   );
